@@ -10,13 +10,12 @@ import UIKit
 
 class TodoListViewController: UITableViewController {
     var itemList: [TodoItemViewModel] = []
-    let getTodoItemModel = GetTodoItemModel()
-    let delTodoItemModel = DeleteTodoItemModel()
+    let todoListItemModel = TodoListItemModel()
     let selectedColor = GetSelectedColor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        itemList = getTodoItemModel.getTodoItems()
+        itemList = todoListItemModel.getTodoItems()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,7 +49,7 @@ class TodoListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let item = itemList[indexPath.row]
-        delTodoItemModel.deleteTodoItems(id:item.id)
+        todoListItemModel.deleteTodoItems(id:item.id)
         
         itemList.remove(at: indexPath.row)
         let indexPaths = [indexPath]

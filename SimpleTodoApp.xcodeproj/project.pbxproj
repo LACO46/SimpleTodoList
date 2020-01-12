@@ -17,9 +17,8 @@
 		0E739FC623CAF651001A6251 /* SimpleTodoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E739FC523CAF651001A6251 /* SimpleTodoAppTests.swift */; };
 		0E739FD123CAF651001A6251 /* SimpleTodoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E739FD023CAF651001A6251 /* SimpleTodoAppUITests.swift */; };
 		0E739FE323CAFC70001A6251 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E739FE223CAFC70001A6251 /* Model.swift */; };
-		0E739FE523CAFCB5001A6251 /* GetTodoItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E739FE423CAFCB5001A6251 /* GetTodoItems.swift */; };
+		0E739FE523CAFCB5001A6251 /* TodoListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E739FE423CAFCB5001A6251 /* TodoListItems.swift */; };
 		0E739FE723CAFCCC001A6251 /* GetPriorityColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E739FE623CAFCCC001A6251 /* GetPriorityColor.swift */; };
-		0E739FE923CAFCEA001A6251 /* DeleteTodoItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E739FE823CAFCEA001A6251 /* DeleteTodoItems.swift */; };
 		0E739FEB23CAFF34001A6251 /* AddTodoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E739FEA23CAFF34001A6251 /* AddTodoItemViewController.swift */; };
 		0EC178FB23CB2B39008B7CEC /* AddTodoItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC178FA23CB2B39008B7CEC /* AddTodoItems.swift */; };
 		80AB3B21F54E4650D0DB3C2F /* Pods_SimpleTodoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197C97177E4BABE20F894C0F /* Pods_SimpleTodoApp.framework */; };
@@ -61,9 +60,8 @@
 		0E739FD023CAF651001A6251 /* SimpleTodoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTodoAppUITests.swift; sourceTree = "<group>"; };
 		0E739FD223CAF651001A6251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E739FE223CAFC70001A6251 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		0E739FE423CAFCB5001A6251 /* GetTodoItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTodoItems.swift; sourceTree = "<group>"; };
+		0E739FE423CAFCB5001A6251 /* TodoListItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListItems.swift; sourceTree = "<group>"; };
 		0E739FE623CAFCCC001A6251 /* GetPriorityColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPriorityColor.swift; sourceTree = "<group>"; };
-		0E739FE823CAFCEA001A6251 /* DeleteTodoItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTodoItems.swift; sourceTree = "<group>"; };
 		0E739FEA23CAFF34001A6251 /* AddTodoItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoItemViewController.swift; sourceTree = "<group>"; };
 		0EC178FA23CB2B39008B7CEC /* AddTodoItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoItems.swift; sourceTree = "<group>"; };
 		197C97177E4BABE20F894C0F /* Pods_SimpleTodoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleTodoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,8 +173,7 @@
 			children = (
 				0E739FE223CAFC70001A6251 /* Model.swift */,
 				0E739FE623CAFCCC001A6251 /* GetPriorityColor.swift */,
-				0E739FE423CAFCB5001A6251 /* GetTodoItems.swift */,
-				0E739FE823CAFCEA001A6251 /* DeleteTodoItems.swift */,
+				0E739FE423CAFCB5001A6251 /* TodoListItems.swift */,
 				0EC178FA23CB2B39008B7CEC /* AddTodoItems.swift */,
 			);
 			path = Model;
@@ -448,10 +445,9 @@
 				0E739FE723CAFCCC001A6251 /* GetPriorityColor.swift in Sources */,
 				0E739FE323CAFC70001A6251 /* Model.swift in Sources */,
 				0E739FB023CAF651001A6251 /* TodoListViewController.swift in Sources */,
-				0E739FE923CAFCEA001A6251 /* DeleteTodoItems.swift in Sources */,
 				0E739FAC23CAF651001A6251 /* AppDelegate.swift in Sources */,
 				0E739FEB23CAFF34001A6251 /* AddTodoItemViewController.swift in Sources */,
-				0E739FE523CAFCB5001A6251 /* GetTodoItems.swift in Sources */,
+				0E739FE523CAFCB5001A6251 /* TodoListItems.swift in Sources */,
 				0E739FAE23CAF651001A6251 /* SceneDelegate.swift in Sources */,
 				0E739FB623CAF651001A6251 /* SimpleTodoApp.xcdatamodeld in Sources */,
 			);
