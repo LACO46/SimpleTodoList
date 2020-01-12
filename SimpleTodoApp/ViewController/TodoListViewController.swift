@@ -9,7 +9,7 @@
 import UIKit
 
 class TodoListViewController: UITableViewController {
-    var itemList: [todoItem] = []
+    var itemList: [TodoItemViewModel] = []
     let getTodoItemModel = GetTodoItemModel()
     let delTodoItemModel = DeleteTodoItemModel()
     let selectedColor = GetSelectedColor()

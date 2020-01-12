@@ -10,13 +10,13 @@ import Foundation
 import RealmSwift
 
 class GetTodoItemModel {
-    var todoItems: Results<TodoItem>!
+    var todoItems: Results<TodoItemModel>!
     
-    func getTodoItems() -> [todoItem] {
+    func getTodoItems() -> [TodoItemViewModel] {
         let realm = try! Realm()
-        todoItems = realm.objects(TodoItem.self)
+        todoItems = realm.objects(TodoItemModel.self)
         return todoItems.map{
-            return todoItem(id: $0.id, thingsToDo: $0.thingsToDo, priorityName: $0.priorityName, priorityNumber:$0.priorityNumber)
+            return TodoItemViewModel(id: $0.id, thingsToDo: $0.thingsToDo, priorityName: $0.priorityName, priorityNumber:$0.priorityNumber)
         }
     }
 }

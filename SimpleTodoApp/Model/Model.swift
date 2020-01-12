@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class todoItem {
+class TodoItemViewModel {
     var id: Int
     var thingsToDo: String;
     var priorityName: String;
@@ -25,7 +25,7 @@ class todoItem {
 }
 
 
-class TodoItem: Object {
+class TodoItemModel: Object {
     @objc dynamic var id: Int = 0;
     @objc dynamic var thingsToDo: String = "";
     @objc dynamic var priorityName: String = "";

@@ -10,11 +10,11 @@ import Foundation
 import RealmSwift
 
 class AddTodoItemModel {
-    var todoItems: Results<TodoItem>!
+    var todoItems: Results<TodoItemModel>!
     
     func getTodoItems(thingsToDo:String, priorityName:String, priorityNumber:Int){
         let realm = try! Realm()
-        let item = TodoItem()
+        let item = TodoItemModel()
         
         item.thingsToDo = thingsToDo
         item.priorityName = priorityName

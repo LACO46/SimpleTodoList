@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class DeleteTodoItemModel {
-    var todoItems: Results<TodoItem>!
+    var todoItems: Results<TodoItemModel>!
     
     func deleteTodoItems(id: Int) {
         let realm = try! Realm()
