@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class AddTodoItemModel {g
+class AddTodoItemModel {
     func getTodoItems(thingsToDo:String, priorityName:String, priorityNumber:Int){
         let realm = try! Realm()
         let item = TodoItemModel()
