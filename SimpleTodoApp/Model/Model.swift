@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class todoItem {
     var id: Int
@@ -21,4 +22,12 @@ class todoItem {
         self.priorityName = priorityName
         self.priorityNumber = priorityNumber
     }
+}
+
+
+class TodoItem: Object {
+    @objc dynamic var id: Int = 0;
+    @objc dynamic var thingsToDo: String = "";
+    @objc dynamic var priorityName: String = "";
+    @objc dynamic var priorityNumber: Int = 0;
 }

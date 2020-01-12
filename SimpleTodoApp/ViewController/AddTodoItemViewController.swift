@@ -19,10 +19,9 @@ class AddTodoItemViewController: UIViewController {
     }
     
     @IBAction func saveAddTodoItem(_ sender: UIBarButtonItem) {
+        let addTodoItemModel = AddTodoItemModel()
         self.navigationController?.popToRootViewController(animated: true)
-        print(thingsToDoFiled.text)
-        print(priorityFiled.selectedSegmentIndex)
-        print(priorityFiled.titleForSegment(at: priorityFiled.selectedSegmentIndex))
+        addTodoItemModel.getTodoItems(thingsToDo: thingsToDoFiled.text!, priorityName: priorityFiled.titleForSegment(at: priorityFiled.selectedSegmentIndex)!, priorityNumber: priorityFiled.selectedSegmentIndex)
     }
     
     @IBAction func prioritySelecter(_ sender: UISegmentedControl) {

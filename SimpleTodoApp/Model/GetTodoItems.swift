@@ -7,14 +7,16 @@
 //
 
 import Foundation
+import RealmSwift
 
 class GetTodoItemModel {
+    var todoItems: Results<TodoItem>!
+    
     func getTodoItems() -> [todoItem] {
-        // クロージャーを書く
-        let item1: todoItem = todoItem(id: 1, thingsToDo: "宿題をする", priorityName: "低", priorityNumber:0)
-        let item2: todoItem = todoItem(id: 2, thingsToDo: "牛乳を買う", priorityName: "中", priorityNumber:1)
-        let item3: todoItem = todoItem(id: 3, thingsToDo: "手紙を書く", priorityName: "高", priorityNumber:2)
-        
-        return [item1, item2, item3]
+        let realm = try! Realm()
+        todoItems = realm.objects(TodoItem.self)
+        return todoItems.map{
+            return todoItem(id: $0.id, thingsToDo: $0.thingsToDo, priorityName: $0.priorityName, priorityNumber:$0.priorityNumber)
+        }
     }
 }

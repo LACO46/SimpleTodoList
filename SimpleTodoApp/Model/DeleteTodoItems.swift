@@ -7,10 +7,16 @@
 //
 
 import Foundation
+import RealmSwift
 
 class DeleteTodoItemModel {
+    var todoItems: Results<TodoItem>!
+    
     func deleteTodoItems(id: Int) {
-//        クロージャーを書く
-        print("id" + String(id) + "を消す")
+        let realm = try! Realm()
+//        print(todoItems)
+//        try! realm.write{
+//           realm.delete(todoItems[id])
+//        }
     }
 }
