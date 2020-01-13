@@ -41,8 +41,15 @@ class TodoListViewController: UITableViewController {
         let close = UIAlertAction(title: "確認", style: .default) { (action) in
             self.tableView.reloadData()
         }
+        let doItem = UIAlertAction(title: "完了", style: .default) { (action) in
+            self.todoListItemModel.deleteTodoItems(id:item.id)
+            self.itemList.remove(at: indexPath.row)
+            let indexPaths = [indexPath]
+            tableView.deleteRows(at: indexPaths, with: .automatic)
+        }
         let todoDetail = UIAlertController(title: item.thingsToDo, message: "優先度：" + item.priorityName, preferredStyle: .alert)
         todoDetail.addAction(close)
+        todoDetail.addAction(doItem)
         present(todoDetail, animated: true, completion: nil)
 
     }

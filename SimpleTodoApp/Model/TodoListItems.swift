@@ -22,7 +22,6 @@ class TodoListItemModel {
     
     func deleteTodoItems(id: Int) {
         let realm = try! Realm()
-        print(todoItems)
         try! realm.write{
            realm.delete(todoItems[id])
         }
