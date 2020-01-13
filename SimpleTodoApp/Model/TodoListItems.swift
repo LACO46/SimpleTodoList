@@ -11,19 +11,19 @@ import RealmSwift
 
 class TodoListItemModel {
     var todoItems: Results<TodoItemModel>!
-    
+
     func getTodoItems() -> [TodoItemViewModel] {
         let realm = try! Realm()
         todoItems = realm.objects(TodoItemModel.self)
-        return todoItems.map{
-            return TodoItemViewModel(id: $0.id, thingsToDo: $0.thingsToDo, priorityName: $0.priorityName, priorityNumber:$0.priorityNumber)
+        return todoItems.map {
+            return TodoItemViewModel(id: $0.id, thingsToDo: $0.thingsToDo, priorityName: $0.priorityName, priorityNumber: $0.priorityNumber)
         }
     }
-    
+
     func deleteTodoItems(id: Int) {
         let realm = try! Realm()
-        try! realm.write{
-           realm.delete(todoItems[id])
+        try! realm.write {
+            realm.delete(todoItems[id])
         }
     }
 }
