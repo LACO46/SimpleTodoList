@@ -17,6 +17,13 @@ class TodoListViewController: UITableViewController {
         super.viewDidLoad()
         itemList = todoListItemModel.getTodoItems()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        itemList = todoListItemModel.getTodoItems()
+        self.tableView.reloadData()
+        
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemList.count
@@ -26,12 +33,12 @@ class TodoListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ThingsToDoItemCell", for: indexPath)
         let item = itemList[indexPath.row]
         cell.textLabel?.text = item.thingsToDo
-        
+
         // 優先度の高いもののみ太字にする
         if(item.priorityNumber == 2){
             cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 18.0)
         }
-        
+
         cell.contentView.backgroundColor = selectedColor.priorityColor(priorityNumber: item.priorityNumber)
         return cell
     }
@@ -42,10 +49,7 @@ class TodoListViewController: UITableViewController {
             self.tableView.reloadData()
         }
         let doItem = UIAlertAction(title: "完了", style: .default) { (action) in
-            self.todoListItemModel.deleteTodoItems(id:item.id)
-            self.itemList.remove(at: indexPath.row)
-            let indexPaths = [indexPath]
-            tableView.deleteRows(at: indexPaths, with: .automatic)
+            self.deleteTodoItems(item:item, indexPath: indexPath)
         }
         let todoDetail = UIAlertController(title: item.thingsToDo, message: "優先度：" + item.priorityName, preferredStyle: .alert)
         todoDetail.addAction(close)
@@ -56,16 +60,18 @@ class TodoListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let item = itemList[indexPath.row]
-        todoListItemModel.deleteTodoItems(id:item.id)
-        
-        itemList.remove(at: indexPath.row)
-        let indexPaths = [indexPath]
-        tableView.deleteRows(at: indexPaths, with: .automatic)
+        self.deleteTodoItems(item:item, indexPath: indexPath)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
+    private func deleteTodoItems(item: TodoItemViewModel, indexPath: IndexPath){
+        self.todoListItemModel.deleteTodoItems(id:item.id)
+        self.itemList.remove(at: indexPath.row)
+        let indexPaths = [indexPath]
+        tableView.deleteRows(at: indexPaths, with: .automatic)
+    }
 }
 
