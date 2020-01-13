@@ -34,11 +34,6 @@ class TodoListViewController: UITableViewController {
         let item = itemList[indexPath.row]
         cell.textLabel?.text = item.thingsToDo
 
-        // 優先度の高いもののみ太字にする
-        if(item.priorityNumber == 2) {
-            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 18.0)
-        }
-
         cell.contentView.backgroundColor = selectedColor.priorityColor(priorityNumber: item.priorityNumber)
         return cell
     }
